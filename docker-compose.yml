@@ -19,7 +19,14 @@ services:
       target: 8888
       published: "8888"
       protocol: tcp
-    runtime: nvidia
+    # runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+           - driver: nvidia
+             count: 1
+             capabilities: [gpu]
     volumes:
     - type: bind
       source: ./working
