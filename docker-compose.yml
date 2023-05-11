@@ -20,6 +20,7 @@ services:
       published: "8888"
       protocol: tcp
     # runtime: nvidia
+    shm_size: 2g
     deploy:
       resources:
         reservations:
